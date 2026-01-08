@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    background-color: rgb(128, 128, 128);
+}
+header{
+    height: 5em;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header button{
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+header>div>button:hover{
+    border: 5px solid rgb(238, 51, 82);
+}
+.card_container{
+    height: 100vh;
+    margin:2em 5em; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 30px;
+}
+.card{
+    background-color: rgb(124, 102, 157);
+    height: 200px;
+    
+}
