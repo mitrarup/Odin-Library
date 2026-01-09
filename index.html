@@ -10,13 +10,44 @@
     <header>
         <div><button>Add a Book</button></div>
     </header>
+    <dialog open>
+        <div>
+            <h2>Add New Book</h2>
+            <button id="cancel">X</button>
+        </div>
+        <form action="script.js" method="dialog">
+            <div>
+                <label for="title">Title:</label>
+                <p><input type="text" id="title" name="title"></p>
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <p><input type="text" id="author" name="author"></p>
+            </div>
+            <div>
+                <label for="pages">Pages:</label>
+                <p><input type="number" id="pages" name="pages"></p>
+            </div>
+            <div>
+                <input type="checkbox" id="status" name="status">
+                <label for="status">I have read this Read</label>
+            </div>
+            <div>
+                <button type="submit" id="submit_form">Add to Library</button>
+            </div>
+        </form>
+    </dialog>
     <div class="card_container">
         <div class="card">
-            
+            <h1>The Habbit</h1>
+            <h2>J.R.R. Tolkien</h2>
+            <h2>295 Pages</h2>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+            <h1>The Habbit</h1>
+            <h2>J.R.R. Tolkien</h2>
+            <h2>295 Pages</h2>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>

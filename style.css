@@ -31,5 +31,52 @@ header>div>button:hover{
 .card{
     background-color: rgb(124, 102, 157);
     height: 200px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
 }
+ dialog{
+    justify-self: center;
+    padding: 20px;
+    height: 73vh;
+    width: 25em;
+    background-color: rgb(46, 38, 68);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+ }
+ dialog div{
+    padding: 20px;
+ }
+dialog>div{
+    display: flex;
+    gap: 12em;
+}
+input[type="text"],input[type="number"] {
+    margin-top: 7px;
+    width: 26em;
+    height: 2.5em;
+    padding-left: 5px;
+    background-color: rgba(87, 77, 9, 0.307);
+    color: white;
+ }
+ input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    align-self: center;
+ }
+ #submit_form{
+    background-color: rgb(253, 5, 5);
+    color: white;
+    width: 27em;
+    height: 3.5em;
+ }
+ #cancel{
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(212, 208, 216);
+    border: none;
+    font-size: 1.2em;
+ }
