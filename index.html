@@ -8,14 +8,14 @@
 </head>
 <body>
     <header>
-        <div><button>Add a Book</button></div>
+        <div><button id="add_book">Add a Book</button></div>
     </header>
-    <dialog open>
+    <dialog id="my_dialog">
         <div>
             <h2>Add New Book</h2>
             <button id="cancel">X</button>
         </div>
-        <form action="script.js" method="dialog">
+        <form  id="myform">
             <div>
                 <label for="title">Title:</label>
                 <p><input type="text" id="title" name="title"></p>
@@ -29,7 +29,7 @@
                 <p><input type="number" id="pages" name="pages"></p>
             </div>
             <div>
-                <input type="checkbox" id="status" name="status">
+                <input type="checkbox" id="status" name="read">
                 <label for="status">I have read this Read</label>
             </div>
             <div>
