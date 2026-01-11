@@ -30,19 +30,31 @@ header>div>button:hover{
 }
 .card{
     background-color: rgb(124, 102, 157);
-    height: 200px;
+    height: 15em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5em;
 }
+.button{
+    width: 8em;
+    height: 2.5em;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.remove_btn{
+    background-color: red;
+    color: white;
+}
+
+
  dialog{
     justify-self: center;
     padding: 20px;
     height: 73vh;
     width: 25em;
-    background-color: rgb(46, 38, 68);
+    background-color: #1e293b;
     color: white;
     border: 1px solid black;
     border-radius: 10px;
@@ -59,8 +71,9 @@ input[type="text"],input[type="number"] {
     width: 26em;
     height: 2.5em;
     padding-left: 5px;
-    background-color: rgba(87, 77, 9, 0.307);
+    background-color: #131c2f;
     color: white;
+    border: 1px solid #3c3f50;
  }
  input[type="checkbox"] {
     width: 20px;
@@ -69,13 +82,14 @@ input[type="text"],input[type="number"] {
     align-self: center;
  }
  #submit_form{
-    background-color: rgb(253, 5, 5);
+    background-color: #524be7;
     color: white;
     width: 27em;
     height: 3.5em;
+    border: 2px solid #252c54;
  }
  #cancel{
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #1e293b;
     color: rgb(212, 208, 216);
     border: none;
     font-size: 1.2em;

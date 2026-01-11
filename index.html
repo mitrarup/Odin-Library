@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div><button id="add_book">Add a Book</button></div>
@@ -15,7 +17,7 @@
             <h2>Add New Book</h2>
             <button id="cancel">X</button>
         </div>
-        <form  id="myform">
+        <form id="myform">
             <div>
                 <label for="title">Title:</label>
                 <p><input type="text" id="title" name="title"></p>
@@ -38,21 +40,44 @@
         </form>
     </dialog>
     <div class="card_container">
-        <div class="card">
+        <div class="card" id="No1">
             <h1>The Habbit</h1>
             <h2>J.R.R. Tolkien</h2>
             <h2>295 Pages</h2>
+            <div>
+                <button class="button read_btn">Read</button>
+                <button class="button remove_btn" data-cardid="No1">Remove</button>
+            </div>
         </div>
-        <div class="card">
+        <div class="card" id="No2">
             <h1>The Habbit</h1>
             <h2>J.R.R. Tolkien</h2>
             <h2>295 Pages</h2>
+            <div>
+                <button class="button read_btn">Read</button>
+                <button class="button remove_btn" data-cardid="No2">Remove</button>
+            </div>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card" id="No3">
+            <h1>The Habbit</h1>
+            <h2>J.R.R. Tolkien</h2>
+            <h2>295 Pages</h2>
+            <div>
+                <button class="button read_btn">Read</button>
+                <button class="button remove_btn" data-cardid="No3">Remove</button>
+            </div>
+        </div>
+        <div class="card" id="No4">
+            <h1>The Habbit</h1>
+            <h2>J.R.R. Tolkien</h2>
+            <h2>295 Pages</h2>
+            <div>
+                <button class="button read_btn">Read</button>
+                <button class="button remove_btn" data-cardid="No4">Remove</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
