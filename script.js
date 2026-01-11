@@ -24,7 +24,7 @@ function Book(title,author,pages,status) {
     this.author=author;
     this.pages=pages;
     this.status=status;
- 
+    this.id=crypto.randomUUID();
 }
 let n=1;
 let container = document.querySelector(".card_container");
@@ -33,7 +33,7 @@ let container = document.querySelector(".card_container");
 function addBookToLibrary(title,author,pages,status) {
   // take params, create a book then store it in the array
     const book = new Book(title,author,pages,status);
-    book.id=crypto.randomUUID();
+    
     myLibrary.push(book);
     // myLibrary.push(new Book(title,author,pages,status));
     //NOw adding the book on page
@@ -47,7 +47,36 @@ function addBookToLibrary(title,author,pages,status) {
     `;
     container.append(card);
 }
-addBookToLibrary('The Habbit','J.R.R. Tolkien',295,'not read yet');
-addBookToLibrary('The Rabbit','J.R.R. Tolkien',185,' read ');
-console.log(myLibrary[0]);
-console.log(myLibrary[1]);
+
+// addBookToLibrary('The Rabbit','J.R.R. Tolkien',185,' read ');
+// console.log(myLibrary[0]);
+// console.log(myLibrary[1]);
+//Actual DOM
+const addBook=document.getElementById("add_book");
+const cancel=document.getElementById("cancel");
+const dialog=document.getElementById("my_dialog");
+const myForm=document.getElementById("myform");
+
+
+addBook.addEventListener("click",()=>{
+    dialog.showModal();
+})
+cancel.addEventListener("click",()=>{
+    dialog.close();
+})
+
+myForm.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const title=myForm.querySelector('[name="title"]').value;
+    const author=myForm.querySelector('[name="author"]').value;
+    const pages=myForm.querySelector('[name="pages"]').value;
+    const read=myForm.querySelector('[name="read"]').checked;
+    // console.log(title);
+    // console.log(author);
+    // console.log(pages);
+    // console.log(read);
+    addBookToLibrary(title,author,pages,read);
+    dialog.close();
+    myForm.reset();
+});
