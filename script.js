@@ -44,18 +44,32 @@ function renderLibrary(){
     // Updating the DOM through myLibrary
     myLibrary.forEach((book) => {    
         let card = document.createElement("div");
-        let read = book.status ? "Read" : "Not Read";
         card.classList.add("card");
         card.id = book.id;
-        card.innerHTML = `
-            <h1>${book.title}</h1>
-            <h2>${book.author}</h2>
-            <h2>${book.pages} Pages</h2>
-            <div>
-                <button class="button read_btn" data-carduid="${book.id}">${read}</button>
-                <button class="button remove_btn" data-cardid="${book.id}">Remove</button>
-            </div>
-        `;
+        let title=document.createElement("h2");
+        title.textContent= book.title;
+        card.appendChild(title);
+        let author=document.createElement("p");
+        author.textContent= book.author;
+        card.appendChild(author);
+        let page=document.createElement("p");
+        page.textContent=`${book.pages} pages`;
+        card.appendChild(page);
+
+        let btn_container=document.createElement("div");
+        let status_btn=document.createElement("button");
+        let remove_btn=document.createElement("button");
+        status_btn.setAttribute("data-carduid",`${book.id}`);
+        status_btn.textContent = book.status ? "Read" : "Not Read";
+        status_btn.classList.add("button","toggle_status");
+        status_btn.classList.add( book.status ? "read_btn":"notread_btn");
+
+        remove_btn.classList.add("button","remove_btn");
+        remove_btn.setAttribute("data-cardid",`${book.id}`);
+        remove_btn.textContent="Remove";
+        btn_container.appendChild(status_btn);
+        btn_container.appendChild(remove_btn);
+        card.appendChild(btn_container);
         container.appendChild(card);
     })
 }
@@ -79,7 +93,7 @@ myForm.addEventListener("submit", function (event) {
     //mapping the form input values
     const title = myForm.querySelector('[name="title"]').value;
     const author = myForm.querySelector('[name="author"]').value;
-    const pages = myForm.querySelector('[name="pages"]').value;
+    const pages = Number(myForm.querySelector('[name="pages"]').value);
     const status = myForm.querySelector('[name="read"]').checked;
 
     addBookToLibrary(title, author, pages, status);
@@ -88,38 +102,6 @@ myForm.addEventListener("submit", function (event) {
     renderLibrary();
 });
 
-// // logic to remove the book
-// function runAgain() {
-//     const remove = document.querySelectorAll(".remove_btn");
-//     remove.forEach(function (currentButton) {
-
-//         currentButton.addEventListener("click", () => {
-//             let cId = currentButton.dataset.cardid;
-//             let remove_card = document.getElementById(cId);
-//             remove_card.remove();
-//         });
-//     })
-
-// }
-
-// const read_btns=document.querySelectorAll(".read_btn");
-// read_btns.forEach(function(toggle_btn){
-
-//     // toggle_btn.replaceWith(toggle_btn.cloneNode(true));
-
-
-//     toggle_btn.addEventListener("click",()=>{
-//         let uId = toggle_btn.dataset.carduid;
-//         myLibrary.forEach((book,index)=>{
-//             if(book.id===uId){
-//                 book.toggleStatus();
-//                 console.log(book ===myLibrary[index]);
-//             }
-//         });
-
-//         console.log(myLibrary);
-//     });
-// })
 
 container.addEventListener("click", (current_button) => {
     // Removing the card
@@ -133,13 +115,15 @@ container.addEventListener("click", (current_button) => {
         }
     }
     // Changing read status
-    if (current_button.target.classList.contains("read_btn")) {
+    if (current_button.target.classList.contains("toggle_status")) {
         // getting the card id of the clicked status button
         const uId = current_button.target.dataset.carduid;
         // getting the book from mtLibrary
         const current_book = myLibrary.find(book => book.id === uId);
         // changing the read status
-        current_book.toggleStatus();
+        if(current_book){
+            current_book.toggleStatus();
+        }
     }
     // Updating the UI
     renderLibrary();
