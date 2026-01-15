@@ -2,34 +2,49 @@
     margin: 0px;
     padding: 0px;
 }
-html{
-    background-color: rgb(128, 128, 128);
+body{
+    background-color: #020617;
 }
 header{
     height: 5em;
-    background-color: orange;
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-bottom: 1px solid #334155;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+header>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: absolute;
+    left: 3rem;
+}
 header button{
+    position: absolute;
+    right: 4rem;
+    top: 1.5rem;
     display: inline-block;
     padding: 10px 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-header>div>button:hover{
-    border: 5px solid rgb(238, 51, 82);
+    border: none;
+    border-radius: 0.8rem;
+    background-color: #38bdf8;
+    color: #020617;
 }
 .card_container{
     height: 100vh;
-    margin:2em 5em; 
+    margin:2rem 5rem; 
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-    gap: 30px;
+    gap: 2rem;
 }
 .card{
-    background-color: rgb(124, 102, 157);
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    color: white;
     height: 15em;
     display: flex;
     flex-direction: column;
@@ -37,30 +52,45 @@ header>div>button:hover{
     align-items: center;
     gap: 1.5em;
 }
-.button{
-    width: 8em;
-    height: 2.5em;
-    border-radius: 5px;
-    font-size: 20px;
+.card p {
+  color: #cbd5f5;
 }
-.remove_btn{
-    background-color: red;
+
+.button{
+    width: 8rem;
+    height: 2.5em;
+    margin-right: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+}
+.remove_btn {
+    background-color: #ef4444;
     color: white;
 }
+.read_btn{
+    background-color: #38bdf8;
+    color: #020617;
+}
+.notread_btn{
+    background-color: #334155;
+    color: #f8fafc;
+}
 
-
- dialog{
+dialog{
     justify-self: center;
-    padding: 20px;
+    align-self: center;
+    padding: 1.25rem;
     height: 73vh;
-    width: 25em;
+    width: 25rem;
     background-color: #1e293b;
     color: white;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 0.8rem;
  }
- dialog div{
-    padding: 20px;
+dialog div{
+    padding: 1.25rem;
  }
 dialog>div{
     display: flex;
@@ -76,10 +106,10 @@ input[type="text"],input[type="number"] {
     border: 1px solid #3c3f50;
  }
  input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    align-self: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.3rem;
+    justify-self: center;
  }
  #submit_form{
     background-color: #524be7;
